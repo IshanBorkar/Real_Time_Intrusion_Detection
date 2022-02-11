@@ -1,0 +1,752 @@
+2022-02-07 15:08:05.743670: I tensorflow/core/common_runtime/direct_session.cc:296] Device mapping:
+
+Parsing ./cfg/yolo.cfg
+Parsing cfg/yolo.cfg
+Loading bin/yolo.weights ...
+Successfully identified 203934260 bytes
+Finished in 0.07471632957458496s
+Model has a coco model name, loading coco labels.
+
+Building net ...
+Source | Train? | Layer description                | Output size
+-------+--------+----------------------------------+---------------
+       |        | input                            | (?, 608, 608, 3)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 608, 608, 32)
+WARNING:tensorflow:From D:\2022\January 2022\25-01-2022(Code_Real_Time_Intrusion)\darkflow-master\darkflow\net\ops\simple.py:106: The name tf.nn.max_pool i
+s deprecated. Please use tf.nn.max_pool2d instead.
+
+ Load  |  Yep!  | maxp 2x2p0_2                     | (?, 304, 304, 32)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 304, 304, 64)
+ Load  |  Yep!  | maxp 2x2p0_2                     | (?, 152, 152, 64)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 152, 152, 128)
+ Load  |  Yep!  | conv 1x1p0_1  +bnorm  leaky      | (?, 152, 152, 64)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 152, 152, 128)
+ Load  |  Yep!  | maxp 2x2p0_2                     | (?, 76, 76, 128)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 76, 76, 256)
+ Load  |  Yep!  | conv 1x1p0_1  +bnorm  leaky      | (?, 76, 76, 128)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 76, 76, 256)
+ Load  |  Yep!  | maxp 2x2p0_2                     | (?, 38, 38, 256)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 38, 38, 512)
+ Load  |  Yep!  | conv 1x1p0_1  +bnorm  leaky      | (?, 38, 38, 256)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 38, 38, 512)
+ Load  |  Yep!  | conv 1x1p0_1  +bnorm  leaky      | (?, 38, 38, 256)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 38, 38, 512)
+ Load  |  Yep!  | maxp 2x2p0_2                     | (?, 19, 19, 512)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 19, 19, 1024)
+ Load  |  Yep!  | conv 1x1p0_1  +bnorm  leaky      | (?, 19, 19, 512)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 19, 19, 1024)
+ Load  |  Yep!  | conv 1x1p0_1  +bnorm  leaky      | (?, 19, 19, 512)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 19, 19, 1024)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 19, 19, 1024)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 19, 19, 1024)
+ Load  |  Yep!  | concat [16]                      | (?, 38, 38, 512)
+ Load  |  Yep!  | conv 1x1p0_1  +bnorm  leaky      | (?, 38, 38, 64)
+WARNING:tensorflow:From D:\2022\January 2022\25-01-2022(Code_Real_Time_Intrusion)\darkflow-master\darkflow\net\ops\convolution.py:28: calling extract_image
+_patches (from tensorflow.python.ops.array_ops) with ksizes is deprecated and will be removed in a future version.
+Instructions for updating:
+ksizes is deprecated, use sizes instead
+ Load  |  Yep!  | local flatten 2x2                | (?, 19, 19, 256)
+ Load  |  Yep!  | concat [27, 24]                  | (?, 19, 19, 1280)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 19, 19, 1024)
+ Load  |  Yep!  | conv 1x1p0_1    linear           | (?, 19, 19, 425)
+-------+--------+----------------------------------+---------------
+GPU mode with 1.0 usage
+Finished in 20.336027145385742s
+
+Adding point #0 with position(515,75)
+Adding point #1 with position(529,476)
+Adding point #2 with position(892,512)
+Adding point #3 with position(891,106)
+Adding point #4 with position(515,69)
+Adding point #5 with position(515,77)
+intrusion detected
+[[2.150e+02 0.000e+00 1.086e+03 7.190e+02 1.000e+00]]
+dict_items([(1.0, 1)])
+FPS 0.3
+intrusion detected
+[[3.18364773e+02 1.46102127e+02 1.11362214e+03 7.14883690e+02
+  1.00000000e+00]]
+dict_items([(1.0, 2)])
+FPS 0.1
+FPS 1.8
+FPS 2.0
+FPS 2.1
+FPS 2.1
+FPS 1.5
+FPS 2.1
+FPS 2.1
+normal
+FPS 1.6
+FPS 2.0
+FPS 1.9
+FPS 2.1
+FPS 2.1
+normal
+FPS 2.1
+normal
+FPS 2.1
+intrusion detected
+[[2.92547180e+02 1.63777387e+02 1.02009620e+03 6.96156560e+02
+  1.00000000e+00]]
+dict_items([(1.0, 3)])
+FPS 2.1
+intrusion detected
+[[3.28199347e+02 1.69325579e+02 1.04058928e+03 6.96294328e+02
+  1.00000000e+00]]
+dict_items([(1.0, 4)])
+FPS 2.0
+intrusion detected
+[[3.32662599e+02 1.56305032e+02 1.05201241e+03 6.94260662e+02
+  1.00000000e+00]]
+dict_items([(1.0, 5)])
+FPS 2.0
+intrusion detected
+[[3.29917940e+02 1.48996572e+02 1.05315869e+03 6.97877109e+02
+  1.00000000e+00]]
+dict_items([(1.0, 6)])
+FPS 2.1
+intrusion detected
+[[4.05858744e+02 1.57258928e+02 1.09087648e+03 6.99626630e+02
+  1.00000000e+00]]
+dict_items([(1.0, 7)])
+FPS 2.0
+intrusion detected
+[[4.33380690e+02 1.58976282e+02 1.08945062e+03 6.99187700e+02
+  1.00000000e+00]]
+dict_items([(1.0, 8)])
+FPS 2.1
+intrusion detected
+[[4.12853389e+02 1.61285247e+02 1.06261572e+03 6.96479694e+02
+  1.00000000e+00]]
+dict_items([(1.0, 9)])
+FPS 2.1
+intrusion detected
+[[4.06588821e+02 1.65149654e+02 1.05334291e+03 6.95719090e+02
+  1.00000000e+00]]
+dict_items([(1.0, 10)])
+FPS 2.1
+intrusion detected
+[[4.01855850e+02 1.67636965e+02 1.04980705e+03 6.95604283e+02
+  1.00000000e+00]]
+dict_items([(1.0, 11)])
+FPS 2.1
+intrusion detected
+[[3.97516104e+02 1.64258931e+02 1.04938739e+03 6.97077718e+02
+  1.00000000e+00]]
+dict_items([(1.0, 12)])
+FPS 2.0
+intrusion detected
+[[3.88044121e+02 1.59684094e+02 1.06347506e+03 7.03500396e+02
+  1.00000000e+00]]
+dict_items([(1.0, 13)])
+FPS 2.1
+intrusion detected
+[[3.77797796e+02 1.51963829e+02 1.07325422e+03 7.05868104e+02
+  1.00000000e+00]]
+dict_items([(1.0, 14)])
+FPS 2.0
+intrusion detected
+[[3.65905932e+02 9.32996204e+01 1.08213432e+03 6.71283977e+02
+  1.00000000e+00]]
+dict_items([(1.0, 15)])
+FPS 2.0
+intrusion detected
+[[3.87577323e+02 7.61071255e+01 1.13628321e+03 6.85069378e+02
+  1.00000000e+00]]
+dict_items([(1.0, 16)])
+FPS 1.8
+intrusion detected
+[[3.26413976e+02 4.62782793e+01 1.14752151e+03 6.81678955e+02
+  1.00000000e+00]]
+dict_items([(1.0, 17)])
+FPS 1.6
+intrusion detected
+[[2.94196596e+02 3.06689927e+01 1.16187488e+03 6.82432661e+02
+  1.00000000e+00]]
+dict_items([(1.0, 18)])
+FPS 1.6
+intrusion detected
+[[2.75899548e+02 4.11836016e+01 1.16473595e+03 7.02770477e+02
+  1.00000000e+00]]
+dict_items([(1.0, 19)])
+FPS 1.6
+intrusion detected
+[[2.98577413e+02 4.88985025e+01 1.12958413e+03 7.10335871e+02
+  1.00000000e+00]]
+dict_items([(1.0, 20)])
+FPS 1.6
+intrusion detected
+[[3.46746751e+02 9.73362177e+01 1.16838694e+03 7.32096926e+02
+  1.00000000e+00]]
+dict_items([(1.0, 21)])
+FPS 1.6
+intrusion detected
+[[3.31604051e+02 1.24861536e+02 1.11947083e+03 7.37781195e+02
+  1.00000000e+00]]
+dict_items([(1.0, 22)])
+FPS 1.6
+intrusion detected
+[[3.40443736e+02 1.37604396e+02 1.09206560e+03 7.29657965e+02
+  1.00000000e+00]]
+dict_items([(1.0, 23)])
+FPS 1.6
+intrusion detected
+[[3.54997685e+02 1.46531210e+02 1.08026688e+03 7.22313056e+02
+  1.00000000e+00]]
+dict_items([(1.0, 24)])
+FPS 1.6
+intrusion detected
+[[3.64729404e+02 1.50810704e+02 1.06505394e+03 7.17162178e+02
+  1.00000000e+00]]
+dict_items([(1.0, 25)])
+FPS 1.6
+intrusion detected
+[[3.70954878e+02 1.54523630e+02 1.05349496e+03 7.13623038e+02
+  1.00000000e+00]]
+dict_items([(1.0, 26)])
+FPS 1.6
+intrusion detected
+[[3.76032403e+02 1.57950320e+02 1.04707713e+03 7.10128253e+02
+  1.00000000e+00]]
+dict_items([(1.0, 27)])
+FPS 1.6
+intrusion detected
+[[3.79741505e+02 1.61356891e+02 1.04093660e+03 7.05920699e+02
+  1.00000000e+00]]
+dict_items([(1.0, 28)])
+FPS 1.6
+intrusion detected
+[[3.83203864e+02 1.62894752e+02 1.03920475e+03 7.04623138e+02
+  1.00000000e+00]]
+dict_items([(1.0, 29)])
+FPS 1.6
+intrusion detected
+[[3.87751399e+02 1.63967050e+02 1.03665828e+03 7.03544022e+02
+  1.00000000e+00]]
+dict_items([(1.0, 30)])
+FPS 1.6
+intrusion detected
+[[3.89107711e+02 1.64742700e+02 1.03347709e+03 7.02023160e+02
+  1.00000000e+00]]
+dict_items([(1.0, 31)])
+FPS 1.6
+intrusion detected
+[[3.90286982e+02 1.65382717e+02 1.03032392e+03 7.01020131e+02
+  1.00000000e+00]]
+dict_items([(1.0, 32)])
+FPS 1.6
+intrusion detected
+[[3.87991699e+02 1.65093032e+02 1.02797946e+03 7.01754075e+02
+  1.00000000e+00]]
+dict_items([(1.0, 33)])
+FPS 1.6
+intrusion detected
+[[3.89125214e+02 1.64278058e+02 1.02903879e+03 7.00060557e+02
+  1.00000000e+00]]
+dict_items([(1.0, 34)])
+FPS 1.6
+intrusion detected
+[[3.92716906e+02 1.63680146e+02 1.02566316e+03 6.99650111e+02
+  1.00000000e+00]]
+dict_items([(1.0, 35)])
+FPS 1.6
+intrusion detected
+[[3.93158665e+02 1.61787129e+02 1.02729220e+03 7.01114756e+02
+  1.00000000e+00]]
+dict_items([(1.0, 36)])
+FPS 1.6
+intrusion detected
+[[3.92524926e+02 1.61324808e+02 1.02547053e+03 7.01375226e+02
+  1.00000000e+00]]
+dict_items([(1.0, 37)])
+FPS 1.6
+intrusion detected
+[[3.92600335e+02 1.61976389e+02 1.02579055e+03 7.01265351e+02
+  1.00000000e+00]]
+dict_items([(1.0, 38)])
+FPS 1.6
+intrusion detected
+[[3.93781373e+02 1.60064558e+02 1.02739477e+03 7.01391785e+02
+  1.00000000e+00]]
+dict_items([(1.0, 39)])
+FPS 1.6
+intrusion detected
+[[3.92944842e+02 1.59240976e+02 1.02604017e+03 7.01509990e+02
+  1.00000000e+00]]
+dict_items([(1.0, 40)])
+FPS 1.6
+intrusion detected
+[[3.94774580e+02 1.59490640e+02 1.02665713e+03 7.01624303e+02
+  1.00000000e+00]]
+dict_items([(1.0, 41)])
+FPS 1.6
+intrusion detected
+[[3.92353066e+02 1.58967492e+02 1.02544904e+03 7.02266974e+02
+  1.00000000e+00]]
+dict_items([(1.0, 42)])
+FPS 1.6
+intrusion detected
+[[3.92190763e+02 1.57959876e+02 1.02685765e+03 7.03302245e+02
+  1.00000000e+00]]
+dict_items([(1.0, 43)])
+FPS 1.6
+intrusion detected
+[[3.92107740e+02 1.56645251e+02 1.03134721e+03 7.03958021e+02
+  1.00000000e+00]]
+dict_items([(1.0, 44)])
+FPS 1.6
+intrusion detected
+[[3.91783472e+02 1.57795897e+02 1.03204458e+03 7.04502173e+02
+  1.00000000e+00]]
+dict_items([(1.0, 45)])
+FPS 1.6
+intrusion detected
+[[3.88938704e+02 1.56367647e+02 1.02915205e+03 7.02641968e+02
+  1.00000000e+00]]
+dict_items([(1.0, 46)])
+FPS 1.6
+intrusion detected
+[[3.90536260e+02 1.56341844e+02 1.02603444e+03 7.02714189e+02
+  1.00000000e+00]]
+dict_items([(1.0, 47)])
+FPS 1.5
+intrusion detected
+[[3.89361779e+02 1.56996544e+02 1.02338289e+03 7.02725280e+02
+  1.00000000e+00]]
+dict_items([(1.0, 48)])
+FPS 1.6
+intrusion detected
+[[3.88355051e+02 1.57810305e+02 1.02687702e+03 7.02158950e+02
+  1.00000000e+00]]
+dict_items([(1.0, 49)])
+FPS 1.6
+intrusion detected
+[[3.89062204e+02 1.58292099e+02 1.02779019e+03 7.00458868e+02
+  1.00000000e+00]]
+dict_items([(1.0, 50)])
+FPS 1.6
+intrusion detected
+[[4.25876888e+02 1.49199181e+02 1.10522394e+03 7.03207950e+02
+  1.00000000e+00]]
+dict_items([(1.0, 51)])
+FPS 1.6
+intrusion detected
+[[4.83079152e+02 1.12098925e+02 1.16830765e+03 6.92850468e+02
+  1.00000000e+00]]
+dict_items([(1.0, 52)])
+FPS 1.6
+normal
+normal
+FPS 1.6
+normal
+FPS 1.6
+normal
+FPS 1.6
+intrusion detected
+[]
+dict_items([(1.0, 52)])
+FPS 1.6
+normal
+FPS 1.6
+normal
+FPS 1.6
+FPS 1.6
+FPS 1.6
+FPS 1.6
+normal
+FPS 1.6
+FPS 1.6
+normal
+FPS 1.6
+normal
+FPS 1.6
+normal
+FPS 1.6
+intrusion detected
+[]
+dict_items([(1.0, 52)])
+FPS 1.6
+intrusion detected
+[]
+dict_items([(1.0, 52)])
+FPS 1.6
+intrusion detected
+normal
+[]
+dict_items([(1.0, 52)])
+FPS 1.6
+normal
+normal
+FPS 1.6
+normal
+normal
+FPS 1.6
+normal
+FPS 1.6
+normal
+FPS 1.6
+FPS 1.6
+normal
+FPS 1.6
+FPS 1.6
+normal
+FPS 1.6
+normal
+FPS 1.6
+FPS 1.6
+normal
+FPS 1.6
+normal
+FPS 1.6
+intrusion detected
+[]
+dict_items([(1.0, 52)])
+FPS 1.6
+normal
+FPS 1.5
+normal
+FPS 1.5
+normal
+FPS 1.5
+normal
+FPS 1.5
+normal
+FPS 1.5
+normal
+FPS 1.5
+normal
+FPS 1.5
+intrusion detected
+[]
+dict_items([(1.0, 52)])
+FPS 1.5
+intrusion detected
+[]
+dict_items([(1.0, 52)])
+FPS 1.5
+normal
+normal
+FPS 1.5
+normal
+normal
+FPS 1.5
+intrusion detected
+[]
+dict_items([(1.0, 52)])
+FPS 1.5
+intrusion detected
+[]
+dict_items([(1.0, 52)])
+FPS 1.5
+intrusion detected
+[]
+dict_items([(1.0, 52)])
+FPS 1.5
+intrusion detected
+[[ 514.42799329  131.33115213 1161.19884491  718.28175166   11.        ]]
+dict_items([(1.0, 52), (11.0, 1)])
+FPS 1.5
+intrusion detected
+[[ 519.59975323  136.78712426 1160.76512326  715.9406222    11.        ]]
+dict_items([(1.0, 52), (11.0, 2)])
+FPS 1.5
+intrusion detected
+[[ 516.50946565  136.55254582 1162.36845595  715.99274861   11.        ]]
+dict_items([(1.0, 52), (11.0, 3)])
+FPS 1.6
+intrusion detected
+[[ 516.18881807  136.98322438 1165.7250397   712.33712157   11.        ]]
+dict_items([(1.0, 52), (11.0, 4)])
+FPS 1.6
+intrusion detected
+[[ 489.88945997   96.4911935  1179.11494343  707.55724787   11.        ]]
+dict_items([(1.0, 52), (11.0, 5)])
+FPS 1.6
+intrusion detected
+[[ 434.65352562   74.30897589 1169.33473507  712.08766003   11.        ]]
+dict_items([(1.0, 52), (11.0, 6)])
+FPS 1.6
+intrusion detected
+[[ 416.41054411   78.25343634 1153.87612294  718.25311194   11.        ]]
+dict_items([(1.0, 52), (11.0, 7)])
+FPS 1.4
+intrusion detected
+[[ 399.76591472   69.95108824 1154.58889407  719.14392383   11.        ]]
+dict_items([(1.0, 52), (11.0, 8)])
+FPS 1.5
+intrusion detected
+[[ 398.61125374   76.98980053 1157.78004549  722.92449172   11.        ]]
+dict_items([(1.0, 52), (11.0, 9)])
+FPS 1.3
+intrusion detected
+[[ 402.11006562   80.14640115 1157.60014659  723.99495127   11.        ]]
+dict_items([(1.0, 52), (11.0, 10)])
+
+
+[[ 404.23429643   81.76761436 1157.85088601  724.07593556   11.        ]]
+dict_items([(1.0, 52), (11.0, 11)])
+FPS 1.5
+intrusion detected
+[[ 401.69526833   77.28447349 1157.048813    722.01864883   11.        ]]
+dict_items([(1.0, 52), (11.0, 12)])
+FPS 1.3
+intrusion detected
+[[ 395.45234178   81.70231377 1161.05303564  724.4446336    11.        ]]
+dict_items([(1.0, 52), (11.0, 13)])
+FPS 1.5
+intrusion detected
+[[ 392.00410369   85.22209349 1165.93832309  722.92599054   11.        ]]
+dict_items([(1.0, 52), (11.0, 14)])
+FPS 1.6
+intrusion detected
+[[ 388.08649975   83.22713786 1168.70302614  722.44148517   11.        ]]
+dict_items([(1.0, 52), (11.0, 15)])
+FPS 1.5
+intrusion detected
+[[ 391.7100561    80.77901876 1167.51118495  721.37001806   11.        ]]
+dict_items([(1.0, 52), (11.0, 16)])
+FPS 1.4
+intrusion detected
+[[ 396.82048912   82.91668326 1165.50354024  721.8821627    11.        ]]
+dict_items([(1.0, 52), (11.0, 17)])
+FPS 1.5
+intrusion detected
+[[ 395.26391476   84.03531196 1165.79871772  722.46855986   11.        ]]
+dict_items([(1.0, 52), (11.0, 18)])
+FPS 1.4
+intrusion detected
+[[ 396.75477193   77.70987726 1163.3363046   719.65356131   11.        ]]
+dict_items([(1.0, 52), (11.0, 19)])
+FPS 1.4
+intrusion detected
+[[ 396.11814195   82.56135273 1165.06208153  721.19363842   11.        ]]
+dict_items([(1.0, 52), (11.0, 20)])
+FPS 1.4
+intrusion detected
+[[ 395.84951143   86.60308226 1164.56967928  720.92753018   11.        ]]
+dict_items([(1.0, 52), (11.0, 21)])
+FPS 1.4
+intrusion detected
+[[ 394.35087802   83.16056408 1165.24616422  719.94006049   11.        ]]
+dict_items([(1.0, 52), (11.0, 22)])
+FPS 1.3
+intrusion detected
+[[ 397.50079384   85.70151971 1163.20318581  719.00799762   11.        ]]
+dict_items([(1.0, 52), (11.0, 23)])
+FPS 1.6
+intrusion detected
+[[ 392.62625537   84.91471702 1163.36953902  719.77563146   11.        ]]
+dict_items([(1.0, 52), (11.0, 24)])
+FPS 1.6
+intrusion detected
+[[ 389.85961271   87.97098208 1164.44539046  718.03816128   11.        ]]
+dict_items([(1.0, 52), (11.0, 25)])
+FPS 1.2
+intrusion detected
+[[ 389.77847994   91.35027441 1165.28861694  715.82830066   11.        ]]
+dict_items([(1.0, 52), (11.0, 26)])
+FPS 1.6
+intrusion detected
+[[ 390.34813844   92.36226274 1165.75124797  715.92382369   11.        ]]
+dict_items([(1.0, 52), (11.0, 27)])
+FPS 1.6
+intrusion detected
+[[ 389.23457682   88.34132545 1167.98869388  716.45157662   11.        ]]
+dict_items([(1.0, 52), (11.0, 28)])
+FPS 1.5
+intrusion detected
+[[ 390.10312345   86.1082197  1168.92153367  717.36708528   11.        ]]
+dict_items([(1.0, 52), (11.0, 29)])
+FPS 1.5
+intrusion detected
+[[ 386.17126787   81.3123196  1171.63555772  717.10573334   11.        ]]
+dict_items([(1.0, 52), (11.0, 30)])
+FPS 1.4
+intrusion detected
+[[ 385.64124472   83.01510849 1173.71395551  719.3839361    11.        ]]
+dict_items([(1.0, 52), (11.0, 31)])
+FPS 1.3
+intrusion detected
+[[ 387.20472737   84.56049357 1175.39717916  720.67941869   11.        ]]
+dict_items([(1.0, 52), (11.0, 32)])
+FPS 1.5
+intrusion detected
+[[ 385.4097629    86.61613839 1173.88855778  721.6724975    11.        ]]
+dict_items([(1.0, 52), (11.0, 33)])
+FPS 1.4
+intrusion detected
+[[ 393.47238082   83.15298108 1169.82763203  719.76380147   11.        ]]
+dict_items([(1.0, 52), (11.0, 34)])
+FPS 1.5
+intrusion detected
+[[ 396.45200751   83.33944381 1168.39572245  720.15361916   11.        ]]
+dict_items([(1.0, 52), (11.0, 35)])
+FPS 1.5
+intrusion detected
+[[ 387.96810742  100.91712386 1174.21944266  726.31491659   11.        ]]
+dict_items([(1.0, 52), (11.0, 36)])
+FPS 1.3
+intrusion detected
+[[ 384.95852594  106.91544977 1177.54200836  726.6943751    11.        ]]
+dict_items([(1.0, 52), (11.0, 37)])
+FPS 1.4
+intrusion detected
+[[ 384.90351978   97.8004927  1171.8579506   719.22589997   11.        ]]
+dict_items([(1.0, 52), (11.0, 38)])
+FPS 1.5
+intrusion detected
+[[ 388.53778043   92.52367912 1168.68150124  717.5042918    11.        ]]
+dict_items([(1.0, 52), (11.0, 39)])
+FPS 1.4
+intrusion detected
+[[ 377.03497537   96.60923886 1173.85918223  720.54786432   11.        ]]
+dict_items([(1.0, 52), (11.0, 40)])
+FPS 1.5
+intrusion detected
+[[ 372.04527072   99.7860033  1178.44245614  722.03041451   11.        ]]
+dict_items([(1.0, 52), (11.0, 41)])
+FPS 1.4
+intrusion detected
+[[ 367.66379525   99.82992077 1184.67206174  721.77302321   11.        ]]
+dict_items([(1.0, 52), (11.0, 42)])
+FPS 1.4
+intrusion detected
+[[ 368.77042915  101.84641297 1185.61079109  722.2588787    11.        ]]
+dict_items([(1.0, 52), (11.0, 43)])
+FPS 1.3
+intrusion detected
+[[ 361.50472987  101.83605955 1189.11073991  721.88432804   11.        ]]
+dict_items([(1.0, 52), (11.0, 44)])
+FPS 1.5
+intrusion detected
+[[ 359.71238178  104.27086285 1191.46008088  722.53843239   11.        ]]
+dict_items([(1.0, 52), (11.0, 45)])
+FPS 1.3
+intrusion detected
+[[ 367.27652711   92.72671751 1188.70885797  716.94112343   11.        ]]
+dict_items([(1.0, 52), (11.0, 46)])
+FPS 1.3
+intrusion detected
+[[ 362.75325386  100.10321027 1190.50904909  721.33009887   11.        ]]
+dict_items([(1.0, 52), (11.0, 47)])
+FPS 1.3
+intrusion detected
+[[ 361.06833162  102.96591373 1191.17463839  722.28414709   11.        ]]
+dict_items([(1.0, 52), (11.0, 48)])
+FPS 1.0
+intrusion detected
+[[ 358.73286728  103.43065573 1192.48907936  721.94103532   11.        ]]
+dict_items([(1.0, 52), (11.0, 49)])
+FPS 1.3
+intrusion detected
+[[ 357.78847542  103.75239411 1193.06607853  721.63960767   11.        ]]
+dict_items([(1.0, 52), (11.0, 50)])
+FPS 1.4
+intrusion detected
+[[ 358.9184581   100.74451146 1193.12312681  720.06059961   11.        ]]
+dict_items([(1.0, 52), (11.0, 51)])
+FPS 1.4
+intrusion detected
+[[ 354.66197171  102.56847334 1193.27716019  721.05047016   11.        ]]
+dict_items([(1.0, 52), (11.0, 52)])
+FPS 1.4
+intrusion detected
+[[ 352.01733287  102.45316615 1196.34284742  720.91764794   11.        ]]
+dict_items([(1.0, 52), (11.0, 53)])
+FPS 1.4
+intrusion detected
+[[ 350.68098234  101.96515986 1197.21002728  720.64472592   11.        ]]
+dict_items([(1.0, 52), (11.0, 54)])
+FPS 1.4
+intrusion detected
+[[ 353.18364657  106.43306448 1196.5098995   722.4065961    11.        ]]
+dict_items([(1.0, 52), (11.0, 55)])
+FPS 1.3
+intrusion detected
+[[ 351.81507621  104.84732624 1197.27500419  721.11658199   11.        ]]
+dict_items([(1.0, 52), (11.0, 56)])
+FPS 1.3
+intrusion detected
+[[ 353.45818252  105.61064455 1197.37610201  721.1985426    11.        ]]
+dict_items([(1.0, 52), (11.0, 57)])
+FPS 1.4
+intrusion detected
+[[ 359.44915184   98.3084616  1190.75313411  717.70470991   11.        ]]
+dict_items([(1.0, 52), (11.0, 58)])
+FPS 1.5
+intrusion detected
+[[ 355.05838398  101.14680541 1195.5656422   719.90731224   11.        ]]
+dict_items([(1.0, 52), (11.0, 59)])
+FPS 1.4
+intrusion detected
+[[ 350.40465903  102.80754617 1198.42894298  720.82241874   11.        ]]
+dict_items([(1.0, 52), (11.0, 60)])
+FPS 1.4
+intrusion detected
+[[ 346.74457464  100.30840882 1199.4596729   719.72531758   11.        ]]
+dict_items([(1.0, 52), (11.0, 61)])
+FPS 1.2
+intrusion detected
+[[ 347.80761537  100.08775522 1200.02514198  719.88413365   11.        ]]
+dict_items([(1.0, 52), (11.0, 62)])
+FPS 1.4
+intrusion detected
+[[ 348.22265402   99.47474463 1200.89697298  719.82436573   11.        ]]
+dict_items([(1.0, 52), (11.0, 63)])
+FPS 1.2
+intrusion detected
+[[ 349.54173563  101.95161794 1201.38227953  721.01425332   11.        ]]
+dict_items([(1.0, 52), (11.0, 64)])
+FPS 1.1
+intrusion detected
+[[ 368.41367293   92.86368317 1194.95344998  716.4760416    11.        ]]
+dict_items([(1.0, 52), (11.0, 65)])
+FPS 1.3
+intrusion detected
+[[ 366.46467691  110.22778145 1208.141001    723.3348443    11.        ]]
+dict_items([(1.0, 52), (11.0, 66)])
+FPS 1.5
+intrusion detected
+[[ 367.60300548   98.05430745 1200.11992422  714.01601049   11.        ]]
+dict_items([(1.0, 52), (11.0, 67)])
+FPS 1.5
+intrusion detected
+[[ 373.57078942   94.76016555 1182.99675549  710.44668972   11.        ]]
+dict_items([(1.0, 52), (11.0, 68)])
+FPS 1.2
+intrusion detected
+[[ 379.92615117   93.95232343 1178.2600884   707.37787732   11.        ]]
+dict_items([(1.0, 52), (11.0, 69)])
+FPS 1.3
+intrusion detected
+[[ 385.39701911   97.3822043  1173.3988854   704.48326603   11.        ]]
+dict_items([(1.0, 52), (11.0, 70)])
+FPS 1.5
+intrusion detected
+[[ 385.49703606   98.37310198 1170.91055965  704.39792924   11.        ]]
+dict_items([(1.0, 52), (11.0, 71)])
+FPS 1.6
+intrusion detected
+[[ 386.35328529   98.97183202 1168.48961292  704.18584848   11.        ]]
+dict_items([(1.0, 52), (11.0, 72)])
+FPS 1.2
+intrusion detected
+[[ 387.45486754   99.9124682  1167.44836276  703.42900929   11.        ]]
+dict_items([(1.0, 52), (11.0, 73)])
+FPS 1.5
+intrusion detected
+[[ 388.88078006  101.0534131  1161.47826149  701.08468901   11.        ]]
+dict_items([(1.0, 52), (11.0, 74)])
+FPS 1.5
+intrusion detected
+[[ 389.42899487   99.5239378  1157.90818153  703.49437801   11.        ]]
+dict_items([(1.0, 52), (11.0, 75)])
+FPS 1.4
+intrusion detected
+[[ 388.07787578   93.67265747 1164.0086431   705.79109338   11.        ]]
+dict_items([(1.0, 52), (11.0, 76)])
+FPS 1.6
+intrusion detected
+[[ 384.03800134   85.7416058  1165.29746124  707.8315688    11.        ]]
+dict_items([(1.0, 52), (11.0, 77)])
+FPS 1.4
